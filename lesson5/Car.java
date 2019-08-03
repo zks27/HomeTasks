@@ -96,7 +96,7 @@ public class Car {
     }
 
     public static void main(String[] args) {
-        Car cars[] = Methods.carsGeneration(10);
+        Car[] cars = Methods.carsGeneration(10);
 
         int carNumber = 1;
         System.out.println("Общая цена машины номер " + carNumber + " составляет " + Methods.finalPrice(cars[carNumber - 1]));
@@ -112,10 +112,25 @@ public class Car {
         cars[1].getDoor().currencyConvertation("EUR");
         System.out.println("-------------------------------------------");
         System.out.println("Машины с дизельным двигателем:");
-        Car carsDiezel[] = Methods.typeDiezel(cars);
+        Car[] carsDiezel = Methods.typeDiezel(cars);
         Methods.print(carsDiezel);
         System.out.println("-------------------------------------------");
         carsDiezel[0].getChair().priceWQuantity();
+        System.out.println("-------------------------------------------");
+        carsDiezel[0].getChair().increaseQuantity(2);
+        System.out.println(carsDiezel[0].getChair().getQuantity());
+        System.out.println("-------------------------------------------");
+        carsDiezel[0].getChair().decreaseQuantity(1);
+        System.out.println(carsDiezel[0].getChair().getQuantity());
+        System.out.println("-------------------------------------------");
+        System.out.println("Тип двигателя до улучшения - " + cars[0].getEngine().getType());
+        cars[0].getEngine().upgrade(cars[0], "Twinturbo Diesel");
+        System.out.println("Текущий тип двигателя - " + cars[0].getEngine().getType());
+        System.out.println("-------------------------------------------");
+        System.out.println("Тип КПП до улучшения - " + cars[0].getTransmission().getType());
+        cars[0].getTransmission().upgrade(cars[0], "Manual");
+        System.out.println("Текущий тип КПП - " + cars[0].getTransmission().getType());
+        System.out.println("-------------------------------------------");
 
 
     }

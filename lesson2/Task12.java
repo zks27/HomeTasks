@@ -1,7 +1,10 @@
 package lesson2;
 
+/*
+Task 12. Write a Java program to find the duplicate values of an array of integer values.
+ */
+
 public class Task12 {
-    //Task 12. Write a Java program to find the duplicate values of an array of integer values.
     public static void main(String[] args) {
         int[] array = {3, 2, 3, 4, 5, 3, 7, 7, 7};
         int t = array.length;

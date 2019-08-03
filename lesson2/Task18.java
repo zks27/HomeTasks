@@ -1,5 +1,9 @@
 package lesson2;
 
+/*
+Task 18. Write a Java program to find the second smallest element in an array.
+ */
+
 public class Task18 {
     public static void main(String[] args) {
         int[] array = {1, 1, 24, 4, 20, 6, 25, 1};

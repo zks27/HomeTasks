@@ -8,7 +8,7 @@ public class Door {
     public static String producer;
     public double price;
 
-    public Door(String name,String model, String producer, double price){
+    public Door(String name, String model, String producer, double price) {
         this.name = name;
         this.model = model;
         this.producer = producer;
@@ -16,7 +16,7 @@ public class Door {
 
     }
 
-    public Door(){
+    public Door() {
 
     }
 
@@ -55,7 +55,7 @@ public class Door {
     @Override
     public String toString() {
         return "Door(" +
-                "Producer = " + producer  +
+                "Producer = " + producer +
                 ", model = " + model +
                 ')';
     }

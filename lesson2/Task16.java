@@ -1,7 +1,10 @@
 package lesson2;
 
+/*
+Task 16. Write a Java program to remove duplicate elements from an array.
+ */
+
 public class Task16 {
-    //Task 16. Write a Java program to remove duplicate elements from an array.
     public static void main(String[] arg) {
         int[] array = {1, 2, 3, 3, 3, 5, 7, 8, 9, 5, 5};
         int t = array.length;

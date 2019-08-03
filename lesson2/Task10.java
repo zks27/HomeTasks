@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 10. Write a Java program to find the maximum and minimum value of an array
+ */
+
 public class Task10 {
     public static void main(String[] args) {
-        //Task 10. Write a Java program to find the maximum and minimum value of an array
         int[] array = {1, -4, 3, 28, 33, 6, 7, 31, 33, 2, -4};
         int max = array[0];
         int min = array[0];

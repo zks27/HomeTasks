@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 14. Write a Java program to find the common elements between two arrays (string values)
+ */
+
 public class Task14 {
     public static void main(String[] args){
-        //Task 14. Write a Java program to find the common elements between two arrays (string values)
         String [] arrayFirst = {"Один","Два","Три","Четыре","Пять","Шесть","Семь","Девять"};
         String [] arraySecond = {"Девять","Десять","Один","Два","Пять"};
         System.out.println("Список одинаковых элементов в 2-х массивах:");

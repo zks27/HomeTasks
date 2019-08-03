@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 5.  Write a Java program to test if an array contains a specific value
+ */
+
 public class Task5 {
     public static void main(String[] args) {
-        //Task 5.  Write a Java program to test if an array contains a specific value
         int[] array = {1, 2, 8, 4, 5, 6, 7, 8, 9};
         int spV = 3;
         int c = 0;

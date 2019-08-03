@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 17. Write a Java program to find the second largest element in an array
+ */
+
 public class Task17 {
     public static void main(String[] args) {
-        //Task 17. Write a Java program to find the second largest element in an array
         int[] array = {25, 2, 24, 4, 20, 6, 25};
         int max = array[0];
         int secondMax = array[0];

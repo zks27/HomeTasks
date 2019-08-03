@@ -75,7 +75,7 @@ public class Chair {
     @Override
     public String toString() {
         return "Chair(" +
-                "Producer = " + producer  +
+                "Producer = " + producer +
                 ", model = " + model +
                 ')';
     }

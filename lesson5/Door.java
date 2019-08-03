@@ -2,36 +2,36 @@ package lesson5;
 
 import java.util.Objects;
 
-public class Door extends External implements CurrencyConvertion, PriceWQuantity{
-    public String producer;
-    public String model;
-    public int price;
+public class Door extends Detail implements Adaptable {
+    private int quantity;
+    private String model;
+    private int price;
 
-    Door (){
+    Door() {
 
     }
 
-    Door (String materials, int quantity, String producer, String model, int price){
-        super (materials, quantity);
-        this.producer = producer;
+    Door(String material, String producer, int quantity, String model, int price) {
+        super(material, producer);
+        this.quantity = quantity;
         this.model = model;
         this.price = price;
     }
 
-    Door (int quantity, String producer, String model, int price){
-        this.quantity =quantity;
-        this.producer = producer;
+    Door(int quantity, String producer, String model, int price) {
+        super.producer = producer;
+        this.quantity = quantity;
         this.model = model;
         this.price = price;
+
     }
 
-
-    public String getProducer() {
-        return producer;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setProducer(String producer) {
-        this.producer = producer;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getModel() {
@@ -51,23 +51,23 @@ public class Door extends External implements CurrencyConvertion, PriceWQuantity
     }
 
     @Override
-    public int getQuantity() {
-        return super.getQuantity();
+    public String getProducer() {
+        return super.getProducer();
     }
 
     @Override
-    public void setQuantity(int quantity) {
-        super.setQuantity(quantity);
+    public void setProducer(String producer) {
+        super.setProducer(producer);
     }
 
     @Override
-    public String getMaterials() {
-        return super.getMaterials();
+    public String getMaterial() {
+        return super.getMaterial();
     }
 
     @Override
-    public void setMaterials(String materials) {
-        super.setMaterials(materials);
+    public void setMaterial(String material) {
+        super.setMaterial(material);
     }
 
     @Override
@@ -76,22 +76,22 @@ public class Door extends External implements CurrencyConvertion, PriceWQuantity
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Door door = (Door) o;
-        return price == door.price &&
-                Objects.equals(producer, door.producer) &&
+        return quantity == door.quantity &&
+                price == door.price &&
                 Objects.equals(model, door.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), producer, model, price);
+        return Objects.hash(super.hashCode(), quantity, model, price);
     }
 
     @Override
     public String toString() {
-        return "Door{" + "quantity='" + quantity + '\'' +
-                "producer='" + producer + '\'' +
-                ", model='" + model + '\'' +
-                ", price=" + price +
+        return "Door{" + "producer = " + producer +
+                ", quantity = " + quantity +
+                ", model = " + model +
+                ", price = " + price +
                 '}';
     }
 
@@ -101,10 +101,10 @@ public class Door extends External implements CurrencyConvertion, PriceWQuantity
                 System.out.println("Цена двери = " + price + " USD");
                 break;
             case "EUR":
-                System.out.println("Цена двери = " + (double)price*0.9 + " EUR");
+                System.out.println("Цена двери = " + (double) price * 0.9 + " EUR");
                 break;
             case "RUB":
-                System.out.println("Цена двери = " + price*63 + " RUB");
+                System.out.println("Цена двери = " + price * 63 + " RUB");
                 break;
             default:
                 System.out.println("Данная валюта не поддерживается");
@@ -112,14 +112,40 @@ public class Door extends External implements CurrencyConvertion, PriceWQuantity
         }
     }
 
-    public void currencyConvertation (){
+    public void currencyConvertation() {
         System.out.println("Цена двери в долларах = " + price + " USD");
-        System.out.println("Цена двери в евро = " + (double)price*0.9 + " EUR");
-        System.out.println("Цена двери в рублях = " + price*63 + " RUB");
+        System.out.println("Цена двери в евро = " + (double) price * 0.9 + " EUR");
+        System.out.println("Цена двери в рублях = " + price * 63 + " RUB");
     }
 
     public void priceWQuantity() {
-        System.out.println("Цена дверей для одной машины с учетом количества - " + price*quantity);
+        System.out.println("Цена дверей для одной машины с учетом количества - " + price * quantity);
+    }
+
+    @Override
+    public void increaseQuantity(int count) {
+        quantity = quantity + count;
+        if (quantity < 5 && quantity > 0) {
+            System.out.println("Количество дверей увеличено на " + count);
+        } else {
+            System.out.println("Увеличение количества дверей на " + count + " невозможно");
+            quantity = quantity - count;
+        }
+        System.out.print("Текущее количество дверей - ");
+
+    }
+
+
+    @Override
+    public void decreaseQuantity(int count) {
+        quantity = quantity - count;
+        if (quantity < 5 && quantity > 0) {
+            System.out.println("Количество дверй уменьшено на " + count);
+        } else {
+            System.out.println("Уменьшение количества дверей на " + count + " невозможно");
+            quantity = quantity + count;
+        }
+        System.out.print("Текущее количество дверей - ");
     }
 
 

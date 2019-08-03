@@ -1,5 +1,9 @@
 package lesson2;
 
+/*
+Task 19. Write a Java program to add two matrices of the same size
+ */
+
 public class Task19 {
     public static void main(String[] args) {
         //Task 19. Write a Java program to add two matrices of the same size

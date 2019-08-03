@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 9.  Write a Java program to insert an element (specific position) into an array
+ */
+
 public class Task9 {
     public static void main(String[] args) {
-        //Task 9.  Write a Java program to insert an element (specific position) into an array
         int element = 25;
         int index = 2;
         int[] array = {1, 2, 3, 4, 5, 6};

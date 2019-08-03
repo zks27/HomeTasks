@@ -2,43 +2,35 @@ package lesson5;
 
 import java.util.Objects;
 
-public class Transmission extends Internal implements CurrencyConvertion {
-    public String producer;
-    public String model;
-    public int price;
+public class Transmission extends Detail implements Upgradable {
+    private String type;
+    private String model;
+    private int price;
 
-    Transmission (){
+    Transmission() {
 
     }
 
-    Transmission (String materials, String type, String producer, String model, int price){
-        super (materials, type);
-        this.producer = producer;
-        this.model = model;
-        this.price = price;
-    }
-
-    Transmission (String type, String producer, String model, int price){
+    Transmission(String material, String producer, String type, String model, int price) {
+        super(material, producer);
         this.type = type;
-        this.producer = producer;
         this.model = model;
         this.price = price;
     }
 
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
+    Transmission(String type, String producer, String model, int price) {
+        super.producer = producer;
+        this.type = type;
         this.model = model;
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getPrice() {
@@ -49,24 +41,32 @@ public class Transmission extends Internal implements CurrencyConvertion {
         this.price = price;
     }
 
-    @Override
-    public String getType() {
-        return super.getType();
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     @Override
-    public void setType(String type) {
-        super.setType(type);
+    public String getProducer() {
+        return super.getProducer();
     }
 
     @Override
-    public String getMaterials() {
-        return super.getMaterials();
+    public void setProducer(String producer) {
+        super.setProducer(producer);
     }
 
     @Override
-    public void setMaterials(String materials) {
-        super.setMaterials(materials);
+    public String getMaterial() {
+        return super.getMaterial();
+    }
+
+    @Override
+    public void setMaterial(String material) {
+        super.setMaterial(material);
     }
 
     @Override
@@ -74,23 +74,23 @@ public class Transmission extends Internal implements CurrencyConvertion {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Transmission that = (Transmission) o;
-        return price == that.price &&
-                Objects.equals(producer, that.producer) &&
-                Objects.equals(model, that.model);
+        Transmission transmission = (Transmission) o;
+        return price == transmission.price &&
+                Objects.equals(type, transmission.type) &&
+                Objects.equals(model, transmission.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), producer, model, price);
+        return Objects.hash(super.hashCode(), type, model, price);
     }
 
     @Override
     public String toString() {
-        return "Transmission{" + "type='" + type + '\'' +
-                "producer='" + producer + '\'' +
-                ", model='" + model + '\'' +
-                ", price=" + price +
+        return "Transmission{" + "producer = " + producer +
+                ", type = " + type +
+                ", model = " + model +
+                ", price = " + price +
                 '}';
     }
 
@@ -100,10 +100,10 @@ public class Transmission extends Internal implements CurrencyConvertion {
                 System.out.println("Цена коробки передач = " + price + " USD");
                 break;
             case "EUR":
-                System.out.println("Цена коробки передач = " + (double)price*0.9 + " EUR");
+                System.out.println("Цена коробки передач = " + (double) price * 0.9 + " EUR");
                 break;
             case "RUB":
-                System.out.println("Цена коробки передач = " + price*63 + " RUB");
+                System.out.println("Цена коробки передач = " + price * 63 + " RUB");
                 break;
             default:
                 System.out.println("Данная валюта не поддерживается");
@@ -111,9 +111,47 @@ public class Transmission extends Internal implements CurrencyConvertion {
         }
     }
 
-    public void currencyConvertation (){
+    public void currencyConvertation() {
         System.out.println("Цена коробки передач в долларах = " + price + " USD");
-        System.out.println("Цена коробки передач в евро = " + (double)price*0.9 + " EUR");
-        System.out.println("Цена коробки передач в рублях = " + price*63 + " RUB");
+        System.out.println("Цена коробки передач в евро = " + (double) price * 0.9 + " EUR");
+        System.out.println("Цена коробки передач в рублях = " + price * 63 + " RUB");
+    }
+
+    @Override
+    public void upgrade(Car car, String upgrade) {
+
+        switch (car.getTransmission().getType()) {
+            case "Manual":
+                switch (upgrade) {
+                    case "Automatic":
+                        car.getTransmission().setType(upgrade);
+                        break;
+                    case "Robot":
+                        car.getTransmission().setType(upgrade);
+                        break;
+                    default:
+                        System.out.println("Данная машина уже оснащена ручной коробкой передач. Возможны варианты: Robot, Automatic");
+                        break;
+                }
+                break;
+            case "Automatic":
+                switch (upgrade) {
+                    case "Manual":
+                        car.getTransmission().setType(upgrade);
+                        break;
+                    case "Robot":
+                        car.getTransmission().setType(upgrade);
+                        break;
+                    default:
+                        System.out.println("Данная машина уже оснащена автоматической коробкой передач. Возможны варианты: Robot, Manual");
+                        break;
+                }
+                break;
+        }
+
+    }
+
+    public void priceWQuantity(){
+
     }
 }

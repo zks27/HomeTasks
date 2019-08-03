@@ -8,7 +8,7 @@ public class Window {
     public static String producer;
     public double price;
 
-    public Window(String name,String model, String producer, double price){
+    public Window(String name, String model, String producer, double price) {
         this.name = name;
         this.model = model;
         this.producer = producer;
@@ -16,7 +16,7 @@ public class Window {
 
     }
 
-    public Window(){
+    public Window() {
 
     }
 
@@ -53,11 +53,10 @@ public class Window {
     }
 
 
-
     @Override
     public String toString() {
         return "Window(" +
-                "Producer = " + producer  +
+                "Producer = " + producer +
                 ", model = " + model +
                 ')';
     }

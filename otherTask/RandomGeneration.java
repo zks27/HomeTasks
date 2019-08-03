@@ -8,10 +8,10 @@ package otherTask;
 */
 
 public class RandomGeneration {
-    private int array[];
-    private int arrayWeight[];
+    private int[] array;
+    private int[] arrayWeight;
 
-    RandomGeneration(int array[], int arrayWeight[]) {
+    RandomGeneration(int[] array, int[] arrayWeight) {
         this.array = array;
         this.arrayWeight = arrayWeight;
     }

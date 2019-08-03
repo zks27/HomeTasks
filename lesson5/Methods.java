@@ -1,6 +1,7 @@
 package lesson5;
 
-public class Methods{
+
+public class Methods {
 
     public static Car[] carsGeneration(int length) {
         Car[] cars = new Car[length];
@@ -91,10 +92,10 @@ public class Methods{
 
     public static int finalPrice(Car car) {
 
-        return car.getChair().price * car.getChair().quantity + car.getDoor().price * car.getDoor().quantity + car.getEngine().price + car.getTransmission().price + car.getWindow().price * car.getWindow().quantity;
+        return car.getChair().getPrice() * car.getChair().getQuantity() + car.getDoor().getPrice() * car.getDoor().getQuantity() + car.getEngine().getPrice() + car.getTransmission().getPrice() + car.getWindow().getPrice() * car.getWindow().getQuantity();
     }
 
-    public static int totalPrice(Car car[]) {
+    public static int totalPrice(Car[] car) {
         int sum = 0;
         for (int i = 0; i < car.length; i++) {
             sum = sum + Methods.finalPrice(car[i]);
@@ -102,21 +103,21 @@ public class Methods{
         return sum;
     }
 
-    public static Car[] typeDiezel(Car car[]) {
+    public static Car[] typeDiezel(Car[] car) {
 
         int position = 0;
         int newLength = 0;
         for (int i = 0; i < car.length; i++) {
-            if (car[i].getEngine().type == "Diesel") {
+            if (car[i].getEngine().getType() == "Diesel") {
                 newLength++;
 
             }
         }
-        Car carNew[] = new Car[newLength];
+        Car[] carNew = new Car[newLength];
         if (newLength > 0) {
 
             for (int i = 0; i < car.length; i++) {
-                if (car[i].getEngine().type == "Diesel") {
+                if (car[i].getEngine().getType() == "Diesel") {
                     carNew[position] = car[i];
                     position++;
 
@@ -127,8 +128,8 @@ public class Methods{
         return carNew;
     }
 
-    public static void print(Car newCars []){
-        for (int i=0; i<newCars.length; i++){
+    public static void print(Car[] newCars) {
+        for (int i = 0; i < newCars.length; i++) {
             System.out.println("- " + newCars[i].toString());
         }
     }

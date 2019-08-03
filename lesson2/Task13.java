@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 13. Write a Java program to find the duplicate values of an array of string values
+ */
+
 public class Task13 {
     public static void main(String[] arg) {
-        //Task 13. Write a Java program to find the duplicate values of an array of string values
         String[] array = {"кот", "пес", "корова", "щука", "пес", "корова", "корова"};
         int t = array.length;
         System.out.println("Список дубликатов:");

@@ -1,5 +1,15 @@
 package lesson4;
 
+//Класс машина
+//5 деталей
+//цена для каждой детали
+//название фирмы производителя через статическую переменную
+//название + марка
+//1. Вывести стоимость автобиля
+//2. Вывести название фирмы + название модели
+//3. Провести замену деталей(изменить цену)
+//4. Пересчитать сумму автомобиля
+
 public class Car {
     private Chair Chair;
     private Door Door;
@@ -17,6 +27,46 @@ public class Car {
 
     Car() {
 
+    }
+
+    public lesson4.Chair getChair() {
+        return Chair;
+    }
+
+    public void setChair(lesson4.Chair chair) {
+        Chair = chair;
+    }
+
+    public lesson4.Door getDoor() {
+        return Door;
+    }
+
+    public void setDoor(lesson4.Door door) {
+        Door = door;
+    }
+
+    public lesson4.Engine getEngine() {
+        return Engine;
+    }
+
+    public void setEngine(lesson4.Engine engine) {
+        Engine = engine;
+    }
+
+    public lesson4.Wheel getWheel() {
+        return Wheel;
+    }
+
+    public void setWheel(lesson4.Wheel wheel) {
+        Wheel = wheel;
+    }
+
+    public lesson4.Window getWindow() {
+        return Window;
+    }
+
+    public void setWindow(lesson4.Window window) {
+        Window = window;
     }
 
     public double finalPrice() {
@@ -45,9 +95,11 @@ class Demo {
         System.out.println();
         System.out.print("2. ");
         System.out.println(toyota.toString());
-        engine.setPrice(123000);
         System.out.println();
-        System.out.println("4. Цена машины после замены двигателя- " + toyota.finalPrice() + " USD");
+        engine.setPrice(123000);
+        System.out.println("3. Цена нового двигателя - " + toyota.getEngine().getPrice());
+        System.out.println();
+        System.out.println("4. Цена машины после замены двигателя - " + toyota.finalPrice() + " USD");
 
     }
 }

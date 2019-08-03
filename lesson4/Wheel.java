@@ -71,7 +71,7 @@ public class Wheel {
     @Override
     public String toString() {
         return "Wheel(" +
-                "Producer = " + producer  +
+                "Producer = " + producer +
                 ", model = " + model +
                 ')';
     }

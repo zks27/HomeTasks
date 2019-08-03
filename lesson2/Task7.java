@@ -1,8 +1,11 @@
 package lesson2;
 
+/*
+Task 7.  Write a Java program to remove a specific element from an array
+ */
+
 public class Task7 {
     public static void main(String[] args) {
-        //Task 7.  Write a Java program to remove a specific element from an array
         int[] array = {1, 2, 3, 4, 5, 6, 7, 5, 5};
         int index = 0;
         int element = 5;

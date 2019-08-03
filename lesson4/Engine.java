@@ -8,7 +8,7 @@ public class Engine {
     public static String producer;
     public double price;
 
-    public Engine(String name,String model, String producer, double price){
+    public Engine(String name, String model, String producer, double price) {
         this.name = name;
         this.model = model;
         this.producer = producer;
@@ -16,7 +16,7 @@ public class Engine {
 
     }
 
-    public Engine(){
+    public Engine() {
 
     }
 
@@ -55,7 +55,7 @@ public class Engine {
     @Override
     public String toString() {
         return "Engine(" +
-                "Producer = " + producer  +
+                "Producer = " + producer +
                 ", model = " + model +
                 ')';
     }

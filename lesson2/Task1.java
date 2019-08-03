@@ -1,7 +1,11 @@
 package lesson2;
 
+/*
+Task 1. Write a Java program to sort a numeric array and a string array
+ */
+
 public class Task1 {
-    //Task 1. Write a Java program to sort a numeric array and a string array
+
     public static void main(String[] args) {
         int[] arrayInt = {25, 5, 6, 7, 8, 2, 345, 5};
         String[] arrayStr = {"Кот", "Кот", "Пес", "Корова", "Медведь", "Аист", "Щука"};

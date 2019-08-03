@@ -1,12 +1,16 @@
 package lesson1;
 
+/*
+2. Напишите метод, который будет увеличивать каждый элемент массива на 10%.
+ */
+
 public class Task2 {
     public static void main (String[] args){
-       double [] array = {10,20,30,40,50,60};
+       double [] array = {10,20,30,40,40,60};
 
-        for(double arraynew:array){
-           double percent=arraynew*1.1;
-           System.out.println("Если увеличить " + arraynew + " на 10%, получится " + percent);
+        for(double arrayNew:array){
+           double percent=arrayNew*1.1;
+           System.out.println("Если увеличить " + arrayNew + " на 10%, получится " + percent);
         }
     }
 }

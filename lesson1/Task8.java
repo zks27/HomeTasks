@@ -1,5 +1,9 @@
 package lesson1;
 
+/*
+8. Пройти циклом по числам от 1 до 12 и вывести название месяца, соответствующее каждому числу (используя цикл и оператор if else)
+ */
+
 public class Task8 {
     public static void main(String[] args) {
         for (int i = 1; i < 13; ++i) {

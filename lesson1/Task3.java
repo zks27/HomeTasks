@@ -1,5 +1,9 @@
 package lesson1;
 
+/*
+3. Напишите метод, который будет проверять является ли число палиндромом (одинаково читающееся в обоих направлениях).
+ */
+
 public class Task3 {
     public static void main(String[] args) {
         int number = 324;
@@ -15,7 +19,7 @@ public class Task3 {
         if (reverse == fin) {
             System.out.println("Число " + fin + " является палиндромом");
         } else {
-            System.out.println("Число "+ fin + " не является палиндромом");
+            System.out.println("Число " + fin + " не является палиндромом");
         }
 
 

@@ -1,5 +1,9 @@
 package lesson1;
 
+/*
+5. Вывести на  экран все нечетные цифры от 1 до 15 (используйте остаток от деления)
+ */
+
 public class Task5 {
     public static void main(String[] args) {
         int number = 1;

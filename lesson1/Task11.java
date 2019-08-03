@@ -1,8 +1,12 @@
 package lesson1;
 
+/*
+11. Напишите программу с тремя переменными целого типа. Определить какое из них наибольшее.
+ */
+
 public class Task11 {
     public static void main(String[] args) {
-        int a = 4;
+        int a = 6;
         int b = 5;
         int c = 3;
         if (a > b && a > c) {

@@ -18,7 +18,7 @@ public class CallCenter {
             int operatorNumber = -1;
 
             synchronized (operators) {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < operators.length; i++)
                     if (!operators[i]) {
                         operators[i] = true;
                         operatorNumber = i;
